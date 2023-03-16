@@ -1,0 +1,53 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navBar {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #263343;
+    padding: 8px 12px;
+}
+
+.navBar-logo {
+    font-size: 24px;
+}
+
+.navBar-logo i {
+    color: beige;
+    
+}
+
+.navBar-menu-text {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    justify-content: space-between;
+}
+
+.navBar-menu-text li {
+    padding: 8px 12px;
+}
+
+.navBar-menu-text li:hover {
+    background: peru;
+    border-radius: 4px;
+}
+
+.navBar-icons {
+    display: flex;
+    padding: 0;
+}
+
+.navBar-icons li {
+    color: white;
+    list-style: none;
+    padding: 8px 12px;
+}
