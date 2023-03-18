@@ -1,3 +1,16 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: blanchedalmond;
+    --hover-color: peru;
+}
+
+/* :root를 사용해서 위와 같은 속성값을 미리 지정해 놓으면 필요할때마다 간편하게 가져다 쓸 수 있다.
+    그리고 컬러 변경시에도 일괄적으로 편하게 바꿀 수 있다. 
+    그리고 텍스트 컬러를 white가 아닌 색을 사용한 이유는 웹 페이지 텍스트는 기본적으로 white보다는 톤다운된 #f0f4f5정도가 더 보기에 좋다고 한다.
+    참고로 속성값이 정해져 있는게 아니라 내가 만들어서 쓸 수 있는거임. 예를 들어서 --hi-color: red; 이렇게 써도 가능.
+*/
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0
@@ -5,14 +18,14 @@ body {
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color)
 }
 
 .navBar {
     display : flex;
     justify-content: space-between;
     align-items: center;
-    background: #263343;
+    background-color: var(--background-color);
     padding: 8px 12px;
 }
 
@@ -21,7 +34,7 @@ a {
 }
 
 .navBar-logo i {
-    color: beige;
+    color: var(--accent-color);
     
 }
 
@@ -37,17 +50,56 @@ a {
 }
 
 .navBar-menu-text li:hover {
-    background: peru;
+    background: var(--hover-color);
     border-radius: 4px;
 }
 
 .navBar-icons {
     display: flex;
     padding: 0;
+    cursor: pointer;
 }
 
 .navBar-icons li {
-    color: white;
+    color: var(--text-color);
     list-style: none;
     padding: 8px 12px;
+}
+
+.toggleBtn {
+    display: none;
+}
+
+@media screen and (max-width: 768px)  {
+    .navBar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navBar-menu-text {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .navBar-menu-text li {
+        width: 100%;
+        text-align: center;
+    }
+    .navBar-icons {
+        display: none;
+        width: 100%;
+        justify-content: center;
+    }
+    .toggleBtn {
+        display: block;
+        position: absolute;
+        right: 32px;
+        font-size: 24px;
+        color: var(--accent-color);
+    }
+    .navBar-menu-text.active,
+    .navBar-icons.active {
+        display: flex;
+    }
 }
